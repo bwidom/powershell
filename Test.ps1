@@ -3,7 +3,7 @@ Install-ADDSForest -DomainName 'MyDomain.com' -SafeModeAdministratorPassword $(C
 
 # ----- Edit these Variables for your own Use Case ----- #
 $PASSWORD_FOR_USERS   = "Password1"
-$USER_FIRST_LAST_LIST = Invoke-WebRequest -Uri "" -UseBasicParsing
+$USER_FIRST_LAST_LIST = Invoke-WebRequest -Uri "https://raw.githubusercontent.com/bwidom/powershell/refs/heads/main/names.txt" -UseBasicParsing
 # ------------------------------------------------------ #
 
 $password = ConvertTo-SecureString $PASSWORD_FOR_USERS -AsPlainText -Force
