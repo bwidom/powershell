@@ -1,2 +1,2 @@
-Write-Host "Hello"
-Write-Host "World"
+Add-WindowsFeature AD-Domain-Services -IncludeManagementTools
+Install-ADDSForest -DomainName 'MyDomain.com' -SafeModeAdministratorPassword $(ConvertTo-SecureString 'Adminpassword1' -AsPlainText -Force) -Confirm:$false
