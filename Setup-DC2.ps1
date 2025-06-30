@@ -34,3 +34,5 @@ Write-Host "Done."
 
 #Install git
 winget install --id Git.Git -e --source winget
+
+git clone https://github.com/bwidom/helpdesk-tool.git
