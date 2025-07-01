@@ -4,9 +4,10 @@ $USER_FIRST_LAST_LIST = (Invoke-WebRequest -Uri "https://raw.githubusercontent.c
 # ------------------------------------------------------ #
 
 $password = ConvertTo-SecureString $PASSWORD_FOR_USERS -AsPlainText -Force
-New-ADOrganizationalUnit -Name _USERS -ProtectedFromAccidentalDeletion $false
-
+#New-ADOrganizationalUnit -Name _USERS -ProtectedFromAccidentalDeletion $false
+$i = 0
 foreach ($n in $USER_FIRST_LAST_LIST) {
+    $i++
     $first = $n.Split(" ")[0].ToLower()
     $last = $n.Split(" ")[1].ToLower()
     $username = "$($first.Substring(0,1))$($last)".ToLower()
@@ -17,9 +18,9 @@ foreach ($n in $USER_FIRST_LAST_LIST) {
                -Surname $last `
                -DisplayName $username `
                -Name $username `
-               -EmployeeID $username `
+               -EmployeeID $i `
                -PasswordNeverExpires $true `
-               -Path "ou=_USERS,$(([ADSI]`"").distinguishedName)" `
+               #-Path "ou=_USERS,$(([ADSI]`"").distinguishedName)" `
                -Enabled $true
 }
 
