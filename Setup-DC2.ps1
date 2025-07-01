@@ -20,8 +20,9 @@ foreach ($n in $USER_FIRST_LAST_LIST) {
                -Name $username `
                -EmployeeID $i `
                -PasswordNeverExpires $true `
-               #-Path "ou=_USERS,$(([ADSI]`"").distinguishedName)" `
                -Enabled $true
+               #-Path "ou=_USERS,$(([ADSI]`"").distinguishedName)" `
+               
 }
 
 #Install Winget
