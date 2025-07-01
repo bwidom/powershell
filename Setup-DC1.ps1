@@ -1,6 +1,6 @@
 Set-TimeZone -Id "Eastern Standard Time"
 #Make server discoverable on network
-netsh advfirewall firewall set rule group="Network Discovery" new enable=Yes
+Set-NetFirewallRule -DisplayGroup "Network Discovery" -Enabled True
 
 #Install Active Directory
 Add-WindowsFeature AD-Domain-Services -IncludeManagementTools
