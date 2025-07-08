@@ -24,7 +24,7 @@ foreach ($n in $USER_FIRST_LAST_LIST) {
                
 }
 
-<#
+
 #Install Winget
 $progressPreference = 'silentlyContinue'
 Write-Host "Installing WinGet PowerShell module from PSGallery..."
@@ -39,4 +39,4 @@ Write-Host "Done."
 winget install --id Git.Git -e --source winget
 
 git clone https://github.com/bwidom/helpdesk-tool.git
-#>
+
