@@ -17,6 +17,7 @@ foreach ($n in $USER_FIRST_LAST_LIST) {
                -GivenName $first `
                -Surname $last `
                -DisplayName $username `
+               -EmailAddress "$first.$last@mycompany.com" `
                -Name $username `
                -EmployeeID $i `
                -Enabled $true
