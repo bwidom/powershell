@@ -25,6 +25,7 @@ foreach ($n in $USER_FIRST_LAST_LIST) {
                
 }
 
+Add-ADGroupMember -Identity 'Remote Desktop Users' -Members $(Get-ADUser -Filter *)
 
 #Install Winget
 $progressPreference = 'silentlyContinue'
